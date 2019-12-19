@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from 'axios'
+
+import DropdownForm from './form/DropdownForm'
 import Details from './Details'
 
-class Selection extends React.Component {
+class Dashboard extends React.Component {
   constructor() {
     super()
 
@@ -49,29 +51,10 @@ class Selection extends React.Component {
             <div className="col-sm-12 col-md-12 main">
               <h1 className="page-header">Product pricing</h1>
 
-              <form onSubmit={this.handleSubmit}>
-                <div className="row">
-                  <div className="form-group col-md-6" id="supplierSelect">
-                    <label htmlFor="selSupplier">Supplier</label>
-                    <select className="form-control" id="selSupplier" name="supplier" onChange={this.handleDropDown}>
-                      <option value="">Please Select</option>
-                      <option value="Old Co Ltd">Old Co Ltd</option>
-                      <option value="New Co Ltd">New Co Ltd</option>
-                    </select>
-                  </div>
-                  <div className="form-group col-md-6" id="productSelect">
-                    <label htmlFor="selProduct">Product</label>
-                    <select className="form-control" id="selProduct" name="product" onChange={this.handleDropDown}>
-                      <option value="">Please Select</option>
-                      <option value="Mini wongle">Mini wongle</option>
-                      <option value="Small wongle">Small wongle</option>
-                      <option value="Large wongle">Large wongle</option>
-                      <option value="Super wongle">Super wongle</option>
-                    </select>
-                  </div>
-                </div>
-                <button className="submitBtn">Submit</button>
-              </form>
+              <DropdownForm
+                handleSubmit={this.handleSubmit}
+                handleDropDown={this.handleDropDown}
+              />
 
               <Details
                 queryData={this.state.queryData}
@@ -85,4 +68,4 @@ class Selection extends React.Component {
   }
 }
 
-export default Selection
+export default Dashboard

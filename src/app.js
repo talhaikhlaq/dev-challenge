@@ -4,13 +4,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import './css/dashboard.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Selection from './components/Selection'
+import Dashboard from './components/Dashboard'
 
 const App = () => {
   return(
     <BrowserRouter>
       <Switch>
-        <Route path='/' component={Selection} />
+        <Route path='/' component={Dashboard} />
       </Switch>
     </BrowserRouter>
   )
