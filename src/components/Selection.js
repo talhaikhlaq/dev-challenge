@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Details from './Details'
 
 class Selection extends React.Component {
   constructor() {
@@ -48,7 +49,7 @@ class Selection extends React.Component {
             <div className="col-sm-12 col-md-12 main">
               <h1 className="page-header">Product pricing</h1>
 
-              <form onBlur={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
                 <div className="row">
                   <div className="form-group col-md-6" id="supplierSelect">
                     <label htmlFor="selSupplier">Supplier</label>
@@ -69,29 +70,12 @@ class Selection extends React.Component {
                     </select>
                   </div>
                 </div>
+                <button className="submitBtn">Submit</button>
               </form>
 
-              <h2 className="sub-header">Product details</h2>
-              <div className="table-responsive">
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Unique ID</th>
-                      <th>Supplier</th>
-                      <th>Product</th>
-                      <th>Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{this.state.queryData._id}</td>
-                      <td>{this.state.queryData.supplier}</td>
-                      <td>{this.state.queryData.product}</td>
-                      <td>{this.state.queryData.price}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Details
+                queryData={this.state.queryData}
+              />
 
             </div>
           </div>
